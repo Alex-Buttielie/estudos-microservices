@@ -27,7 +27,7 @@ public class EmailServiceImpl implements EmailServicePort {
     public Email sendEmail(Email email) {
         try {
             this.addDataCreationEmail(email);
-            sendEmailServicePort.sendEmailSmtp(email);
+            this.sendEmailServicePort.sendEmailSmtp(email);
             this.updateEmailStatusSent(email);
         } catch (MailException e){
             this.updateEmailStatusNotSent(email);
@@ -38,7 +38,7 @@ public class EmailServiceImpl implements EmailServicePort {
 
     @Override
     public List<Email> findAll(PageInfo pageInfo) {
-        return null;
+        return emailRepositoryPort.findAll(pageInfo);
     }
 
     @Override

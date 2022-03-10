@@ -17,9 +17,8 @@ public class SmptSendEmailService implements SendEmailServicePort {
     private JavaMailSender sender;
 
     public void sendEmailSmtp(Email email) {
-            this.performsSendingTheEmail(email);
+        this.performsSendingTheEmail(email);
     }
-
 
     private void performsSendingTheEmail(Email email) {
         this.sender.send(this.picksUpFilledEmailObject(email));

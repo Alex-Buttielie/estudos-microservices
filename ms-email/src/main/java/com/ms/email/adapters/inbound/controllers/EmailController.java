@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 @Controller
@@ -41,17 +40,15 @@ public class EmailController {
         PageInfo pageInfo = new PageInfo();
         BeanUtils.copyProperties(pageable, pageInfo);
         List<Email> emailList= service.findAll(pageInfo);
-        return new ResponseEntity<>(new PageImpl<Email>(emailList, pageable, emailList.size()), HttpStatus.OK);
+        return new ResponseEntity<>(new PageImpl<>(emailList, pageable, emailList.size()), HttpStatus.OK);
     }
 
     @GetMapping("/emails/{emailId}")
     public ResponseEntity<Object> getOneEmail(@PathVariable (value = "emailId") UUID emailId ) {
-        Optional<Email> emailOptional = service.findById(emailId);
-        if (!emailOptional.isPresent()){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Email not found");
-        } else {
-            return ResponseEntity.status(HttpStatus.OK).body(emailOptional.get());
-        }
+        return (ResponseEntity<Object>) service
+                .findById(emailId)
+                .map(email -> ResponseEntity.status(HttpStatus.OK).body(email))
+                .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).body("Email not found"));
     }
 
 

@@ -6,6 +6,4 @@ import java.util.UUID;
 
 @Repository
 public interface SpringDataPostgresEmailRepository extends JpaRepository<EmailEntity, UUID> {
-
-
 }
