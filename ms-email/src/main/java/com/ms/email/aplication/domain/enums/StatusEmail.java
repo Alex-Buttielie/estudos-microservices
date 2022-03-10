@@ -1,4 +1,4 @@
-package com.ms.email.enums;
+package com.ms.email.aplication.domain.enums;
 
 public enum StatusEmail {
     SENT,
