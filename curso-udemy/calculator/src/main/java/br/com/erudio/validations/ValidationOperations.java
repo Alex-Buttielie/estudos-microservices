@@ -1,9 +1,11 @@
-package br.com.erudio.utils;
+package br.com.erudio.validations;
 
 import br.com.erudio.exception.UnsuportMathOperationException;
-import br.com.erudio.validations.ValidationNumbers;
 
-public class OperationsUtils {
-
-
+public class ValidationOperations {
+    public static void validateNumbersOperation(String ...Numbers) {
+        if (!ValidationNumbers.isNumeric(Numbers)) {
+            throw new UnsuportMathOperationException("Please set a numeric value");
+        }
+    }
 }

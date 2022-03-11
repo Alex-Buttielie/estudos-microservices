@@ -1,14 +1,12 @@
-package br.com.erudio.servicesImpl;
+package br.com.erudio.servicesImplOperations;
 
-import br.com.erudio.exception.UnsuportMathOperationException;
 import br.com.erudio.utils.ConverterStrToDoubleUtils;
-import br.com.erudio.utils.OperationsUtils;
-import br.com.erudio.validations.ValidationNumber;
+import br.com.erudio.validations.ValidationOperations;
 
 public class Sum {
 
-    public static Double sum(String numberOne, String numberTwo){
-        OperationsUtils.validateNumbersOperation(numberOne, numberTwo);
+    public static Double sumOperation(String numberOne, String numberTwo){
+        ValidationOperations.validateNumbersOperation(numberOne, numberTwo);
         return performsSum(numberOne, numberTwo);
     }
 

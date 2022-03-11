@@ -3,15 +3,15 @@ package br.com.erudio.servicesImplOperations;
 import br.com.erudio.utils.ConverterStrToDoubleUtils;
 import br.com.erudio.validations.ValidationOperations;
 
-public class Division {
+public class SquareRoot {
 
-    public static Double division(String numberOne, String numberTwo){
-        ValidationOperations.validateNumbersOperation(numberOne, numberTwo);
-        return performsSDivision(numberOne, numberTwo);
+    public static Double squareRootOperation(String numberOne){
+        ValidationOperations.validateNumbersOperation(numberOne);
+        return performsSSquareRoot(numberOne);
     }
 
-    private static Double performsSDivision(String numberOne, String numberTwo){
-        return ConverterStrToDoubleUtils.convertDouble(numberOne) / ConverterStrToDoubleUtils.convertDouble(numberTwo);
+    private static Double performsSSquareRoot(String numberOne){
+        return Math.sqrt(ConverterStrToDoubleUtils.convertDouble(numberOne));
     }
 
 }
