@@ -1,6 +1,6 @@
 package br.com.erudio.operations;
 
-import br.com.erudio.utils.ConverterStrToDoubleUtils;
+import br.com.erudio.utils.NumberConverterUtil;
 import br.com.erudio.validations.ValidationOperations;
 
 public class Sum {
@@ -11,7 +11,7 @@ public class Sum {
     }
 
     private static Double performsSum(String numberOne, String numberTwo){
-        return ConverterStrToDoubleUtils.convertDouble(numberOne) + ConverterStrToDoubleUtils.convertDouble(numberTwo);
+        return NumberConverterUtil.convertDouble(numberOne) + NumberConverterUtil.convertDouble(numberTwo);
     }
 
 }

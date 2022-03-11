@@ -1,6 +1,6 @@
 package br.com.erudio.operations;
 
-import br.com.erudio.utils.ConverterStrToDoubleUtils;
+import br.com.erudio.utils.NumberConverterUtil;
 import br.com.erudio.validations.ValidationOperations;
 
 public class SquareRoot {
@@ -11,7 +11,7 @@ public class SquareRoot {
     }
 
     private static Double performsSSquareRoot(String numberOne){
-        return Math.sqrt(ConverterStrToDoubleUtils.convertDouble(numberOne));
+        return Math.sqrt(NumberConverterUtil.convertDouble(numberOne));
     }
 
 }

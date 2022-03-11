@@ -1,6 +1,6 @@
 package br.com.erudio.operations;
 
-import br.com.erudio.utils.ConverterStrToDoubleUtils;
+import br.com.erudio.utils.NumberConverterUtil;
 import br.com.erudio.validations.ValidationOperations;
 
 public class Multiplication {
@@ -11,7 +11,7 @@ public class Multiplication {
     }
 
     private static Double performsMultiplication(String numberOne, String numberTwo){
-        return ConverterStrToDoubleUtils.convertDouble(numberOne) * ConverterStrToDoubleUtils.convertDouble(numberTwo);
+        return NumberConverterUtil.convertDouble(numberOne) * NumberConverterUtil.convertDouble(numberTwo);
     }
 
 }

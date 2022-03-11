@@ -2,7 +2,7 @@ package br.com.erudio.utils;
 
 import br.com.erudio.validations.ValidationNumbers;
 
-public class ConverterStrToDoubleUtils {
+public class NumberConverterUtil {
 
 
     public static Double convertDouble(String strNumber){
