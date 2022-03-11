@@ -1,4 +1,4 @@
-package br.com.erudio.servicesImplOperations;
+package br.com.erudio.operations;
 
 import br.com.erudio.utils.ConverterStrToDoubleUtils;
 import br.com.erudio.validations.ValidationOperations;
