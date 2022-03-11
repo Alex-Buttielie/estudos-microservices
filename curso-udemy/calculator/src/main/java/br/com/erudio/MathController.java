@@ -1,4 +1,5 @@
 package br.com.erudio;
+import br.com.erudio.exception.UnsuportMathOperationException;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -8,9 +9,9 @@ public class MathController {
 
     @RequestMapping(value = "/sum/{numberOne}/{numberTwo}", method = RequestMethod.GET)
     public Double sum (@PathVariable(value = "numberOne") String numberOne,
-                       @PathVariable(value = "numberTwo") String numberTwo) throws Exception {
+                       @PathVariable(value = "numberTwo") String numberTwo) {
         if (!isNumeric(numberOne) || !isNumeric(numberOne)) {
-            throw new Exception();
+            throw new UnsuportMathOperationException("Please set a numeric value");
         }
         Double sum  = convertDouble(numberOne) + convertDouble(numberTwo);
         return sum;
