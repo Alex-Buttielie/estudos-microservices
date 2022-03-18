@@ -34,7 +34,7 @@ public class PersonController {
     public void deletarPessoa (@PathVariable(value = "id") Long id) {
         this.service.excluirPessoa(id);
     }
-    
+
     @RequestMapping(value = "/salvarPessoa", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public Person salvarPessoa (@RequestBody Person novaPessoa) {
         return this.service.salvarPessoa(novaPessoa);
