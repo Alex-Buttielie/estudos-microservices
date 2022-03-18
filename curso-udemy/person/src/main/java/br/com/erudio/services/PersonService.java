@@ -1,42 +1,35 @@
 package br.com.erudio.services;
 
 import br.com.erudio.models.Person;
+import br.com.erudio.repositorys.PersonRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
 
 @Service
 public class PersonService {
 
-    private AtomicLong counter = new AtomicLong();
+    @Autowired
+    private PersonRepository repository;
 
-    public Person findById(String id) {
-        return this.criarObjetoPessoa("Alex");
-
+    public Person findById(Long id) {
+        return repository.findById(id).orElse(null);
     }
 
     public List<Person> findAll() {
-        return preencherListaDePessoas();
+        return repository.findAll();
     }
 
-    private List<Person> preencherListaDePessoas() {
-        List <Person> listPersons = new ArrayList<>();
-        listPersons.add(this.criarObjetoPessoa("Alex"));
-        listPersons.add(this.criarObjetoPessoa("Laura"));
-        listPersons.add( this.criarObjetoPessoa("Maria Clara"));
-        return listPersons;
+    public Person alterarPessoa(Person pessoaAtualizada) {
+        return repository.save(pessoaAtualizada);
     }
 
-    private Person criarObjetoPessoa(String nome) {
-        return Person
-                .builder()
-                .id(counter.incrementAndGet())
-                .firstName(nome)
-                .lastName("Alves")
-                .address("Trindade - Goías - Brasil")
-                .gender("Brasil")
-                .build();
+    public Person salvarPessoa (Person novaPessoa) {
+        return repository.save(novaPessoa);
+    }
+
+    public void excluirPessoa (Long id) {
+        repository.deleteById(id);
     }
 }
