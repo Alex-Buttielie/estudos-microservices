@@ -1,4 +1,4 @@
-package br.com.erudio.service;
+package br.com.erudio.services;
 
 import br.com.erudio.utils.NumberConverterUtil;
 import br.com.erudio.validations.ValidationOperations;
