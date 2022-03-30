@@ -1,10 +1,10 @@
 package br.com.erudio.controllers;
+import br.com.erudio.exception.UnsuportMathOperationException;
 import br.com.erudio.services.*;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-
+@RestController
 public class MathController {
 
     @RequestMapping(value = "/sum/{numberOne}/{numberTwo}", method = RequestMethod.GET)
@@ -37,4 +37,9 @@ public class MathController {
         return SquareRoot.squareRootOperation(numberOne);
     }
 
+    @GetMapping
+    public void index () throws Exception {
+        if(isdisponivel != true)
+        throw new UnsuportMathOperationException("Bem-vindo");
+    }
 }
