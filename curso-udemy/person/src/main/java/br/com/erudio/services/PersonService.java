@@ -25,11 +25,11 @@ public class PersonService {
         return repository.save(pessoaAtualizada);
     }
 
-    public Person salvarPessoa (Person novaPessoa) {
+    public Person salvarPessoa(Person novaPessoa) {
         return repository.save(novaPessoa);
     }
 
-    public void excluirPessoa (Long id) {
+    public void excluirPessoa(Long id) {
         repository.deleteById(id);
     }
 }

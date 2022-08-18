@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.BAD_REQUEST)
 public class UnsuportMathOperationException extends RuntimeException {
-     private static long serialVersionUID = 1L;
+    private static long serialVersionUID = 1L;
 
-     public UnsuportMathOperationException(String exception) {
-         super(exception);
-     }
+    public UnsuportMathOperationException(String exception) {
+        super(exception);
+    }
 
 
 }

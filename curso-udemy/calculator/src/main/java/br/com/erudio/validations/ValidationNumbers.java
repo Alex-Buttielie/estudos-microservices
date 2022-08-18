@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class ValidationNumbers {
 
-    public static boolean isNumeric(String ...strNumbers) {
+    public static boolean isNumeric(String... strNumbers) {
         if (strNumbers == null)
             return false;
 

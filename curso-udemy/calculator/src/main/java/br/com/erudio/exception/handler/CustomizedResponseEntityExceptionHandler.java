@@ -17,8 +17,8 @@ import java.util.Date;
 public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(Exception.class)
-    public final ResponseEntity<ExceptionResponse> handleAllExceptions (Exception ex, WebRequest request){
-        ExceptionResponse exceptionResponse  =
+    public final ResponseEntity<ExceptionResponse> handleAllExceptions(Exception ex, WebRequest request) {
+        ExceptionResponse exceptionResponse =
                 new ExceptionResponse(
                         new Date(),
                         ex.getMessage(),
@@ -27,8 +27,8 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
     }
 
     @ExceptionHandler(UnsuportMathOperationException.class)
-    public final ResponseEntity<ExceptionResponse> handleBadRequestException (Exception ex, WebRequest request){
-        ExceptionResponse exceptionResponse  =
+    public final ResponseEntity<ExceptionResponse> handleBadRequestException(Exception ex, WebRequest request) {
+        ExceptionResponse exceptionResponse =
                 new ExceptionResponse(
                         new Date(),
                         ex.getMessage(),

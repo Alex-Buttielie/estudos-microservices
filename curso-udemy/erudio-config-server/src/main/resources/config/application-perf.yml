@@ -1,15 +1,12 @@
+spring:
+  application:
+    name: greeting-service
 management:
   endpoints:
     web:
       exposure:
         include:
           - "*"
-        exclude:
-server:
-  port: 8081
-spring:
-  application:
-    name: greeting-service
 greeting-service:
-  greeting: "Olá"
+  greeting: "Hola"
   default-value: "Mundo"
